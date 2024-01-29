@@ -1,16 +1,25 @@
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "../CartWidget/CartWidget"
+import logo from "./assets/logoo.svg";
 
 const Navbar = () => {
     return (
-        <nav className="p-3 flex justify-between align-middle">
-            <h3 className="text-3xl font-semibold">Mateando</h3>
+        <nav className="p-4 flex justify-between shadow-lg">
+            <img src={logo} alt="logo" className="logo"/>
             <ul className="flex space-x-5">
-                <li><a href="">Mates</a></li>
-                <li><a href="">Termos</a></li>
-                <li><a href="">Sets de Mate</a></li>
+                <li><a href="" className="text-lg font-medium">Mates</a></li>
+                <li><a href="" className="text-lg font-medium">Termos</a></li>
+                <li><a href="" className="text-lg font-medium">Sets de Mate</a></li>
             </ul>
             <CartWidget/>
         </nav>
+
+        
+
+
+
+
+
+
     );
 }
 
