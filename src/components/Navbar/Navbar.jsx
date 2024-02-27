@@ -1,25 +1,17 @@
 import CartWidget from "../CartWidget/CartWidget"
-import logo from "./assets/logoo.svg";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
         <nav className="p-4 flex justify-between shadow-lg">
-            <img src={logo} alt="logo" className="logo"/>
-            <ul className="flex space-x-5">
-                <li><a href="" className="text-lg font-medium">Mates</a></li>
-                <li><a href="" className="text-lg font-medium">Termos</a></li>
-                <li><a href="" className="text-lg font-medium">Sets de Mate</a></li>
-            </ul>
+            <Link to='/' className="logo">Mateando</Link>
+            <div className="flex space-x-5">
+                <NavLink to='/categoria/mates' className="text-lg font-medium">Mates</NavLink>
+                <NavLink to='/categoria/termos' className="text-lg font-medium">Termos</NavLink>
+                <NavLink to='/categoria/sets' className="text-lg font-medium">Sets de Mate</NavLink>
+            </div>
             <CartWidget/>
         </nav>
-
-        
-
-
-
-
-
-
     );
 }
 
