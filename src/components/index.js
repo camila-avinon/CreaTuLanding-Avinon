@@ -1,6 +1,7 @@
 export { default as Cart } from './Cart/Cart';
 export { default as CartItem } from './CartItem/CartItem';
 export { default as CartWidget } from './CartWidget/CartWidget';
+export { default as CheckOut } from './CheckOut/CheckOut';
 export { default as Footer } from './Footer/Footer';
 export { default as Item } from './Item/Item';
 export { default as ItemCount } from './ItemCount/ItemCount';

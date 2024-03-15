@@ -1,8 +1,6 @@
-# React + Vite
+Mateando es un e-commerce que ofrece distintos accesorios para los amantes del mate. Fue desarrollado con ReactJS y TailwindCSS para los estilos. Se almecenaron toda la información de los productos, las órdenes y los usuarios en una base de datos de Firebase.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para ejecutar la aplicación primero se debe ejecutar el comando: 
+    npm install
+Y para correr el proyecto se ejecuta el comando
+    npm run dev

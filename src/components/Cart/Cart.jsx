@@ -22,7 +22,10 @@ const Cart = () => {
                     <h4>Precio final: ${total}</h4>
                     <button onClick={clearCart} className='fs-sm p-2 rounded hover:bg-red-600 hover:text-white border border-red-600 text-red-600'>Vaciar carrito</button>
                 </div>
-                
+                <div className="flex justify-end">
+                    <Link to="/checkout" className="text-white bg-lime-600 hover:bg-lime-700 focus:ring-2 focus:outline-none focus:ring-lime-500 font-medium rounded-lg text-m px-5 py-2.5 text-center m-2">Finalizar compra</Link>
+
+                </div>
             </>
             }
         </>
