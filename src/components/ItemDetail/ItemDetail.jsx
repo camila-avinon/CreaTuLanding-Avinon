@@ -1,19 +1,25 @@
 import {useContext, useState} from 'react'
 import { CartContext } from '../../context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
-import { useNavigate } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 
 const ItemDetail = ({id, name, price, description, image, category, stock}) => {
   const {addItem} = useContext(CartContext)
-  const navigate = useNavigate()
 
   const handleOnAdd = (quantity) => {
     const item = {
       id, name, price
     }
     addItem(item, quantity)
-    navigate('/')
+    Swal.fire({
+      icon: "success",
+      iconColor: "#83e619",
+      allowEscapeKey: true,
+      allowEnterKey: true,
+      confirmButtonColor: "#83e619",
+      title: "Agregado al carrito"
+    })
   }
 
     return (
