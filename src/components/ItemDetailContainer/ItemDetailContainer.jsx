@@ -29,12 +29,12 @@ const ItemDetailContainer = () => {
         getProduct(productId)
     }, [])
 
-  return (
-    <div>
-        { isLoading ? <LoadingContent/> : <ItemDetail {...product}/> }
-    </div>
-    
-  )
+    return (
+        <div className='h-2/3'>
+            { isLoading ? <LoadingContent/> : <ItemDetail {...product}/> }
+        </div>
+        
+    )
 }
 
 export default ItemDetailContainer

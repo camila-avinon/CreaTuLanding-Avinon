@@ -12,8 +12,8 @@ const Navbar = () => {
                 <NavLink to='/categoria/mates' className="text-lg font-medium">Mates</NavLink>
                 <NavLink to='/categoria/termos' className="text-lg font-medium">Termos</NavLink>
                 <NavLink to='/categoria/sets' className="text-lg font-medium">Sets de Mate</NavLink>
+                <CartWidget/>
             </div>
-            <CartWidget/>
         </nav>
     );
 }

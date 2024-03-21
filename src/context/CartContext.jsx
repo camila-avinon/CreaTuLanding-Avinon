@@ -24,7 +24,6 @@ export const CartProvider = ({children}) => {
             copy[index].quantity += quantity
             copy[index].subtotal += copy[index].price * quantity
             setCart(copy)
-            console.log(cart)
         }
     }
 

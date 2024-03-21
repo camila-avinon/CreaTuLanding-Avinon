@@ -1,8 +1,10 @@
+import { disableNetwork } from "firebase/firestore"
 import { useState } from "react"
 
 const ItemCount = ({stock, handleOnAdd}) => {
 
     const [quantity, setQuantity] = useState(1)
+    const [display, setDisplay] = useState('')
 
     const increment = () => {
         if (quantity < stock ){
@@ -31,7 +33,7 @@ const ItemCount = ({stock, handleOnAdd}) => {
                     </svg>
                 </button>
                 </div>
-                <button className='text-lime-600 hover:text-white bg-white hover:bg-lime-700 border border-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-500 font-medium rounded-lg text-m px-5 py-2.5 text-center my-3' onClick={() => handleOnAdd(quantity)}>Agregar al carrito</button>
+                <button className='text-lime-600 hover:text-white bg-white hover:bg-lime-700 border border-lime-600 focus:ring-4 focus:outline-none focus:ring-lime-500 font-medium rounded-lg text-m px-5 py-2.5 text-center my-3' onClick={() => handleOnAdd(quantity)} disabled={!stock}>Agregar al carrito</button>
                 </>
     )
 }

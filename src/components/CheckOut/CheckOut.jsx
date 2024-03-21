@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { addDoc, collection, serverTimestamp, query, where, getDoc } from 'firebase/firestore'
 import { db } from '../../config/firebaseConfig'
 
 const CheckOut = () => {
 
     const {cart, total, clearCart} = useContext(CartContext)
-    const [orderId, setOrderId] = useState(null)
+    const [order, setOrder] = useState(null)
 
     const [formCheckout, setFormCheckout] = useState({
         name: "",
@@ -52,10 +52,12 @@ const CheckOut = () => {
             date: serverTimestamp()
         }
 
+        
+
         const order = await addDoc(collection(db, 'orders'), newOrder)
-        setOrderId(order.id)
-
-
+        
+        newOrder.id = order.id
+setOrder(newOrder)
         clearCart()
         setFormCheckout({
             name: "",
@@ -65,11 +67,17 @@ const CheckOut = () => {
         })
     }
 
-    if (orderId){
+    if (order){
         return (
-            <div className='text-center m-4 text-2xl'>
-                <h3>¡Tu órden se realizó con éxito!</h3>
-                <p>Tu código de seguimiento es <span className="text-lime-600">{orderId}</span>:</p>     
+            <div className='text-center m-8 text-2xl'>
+                <h3 className='font-semibold'>¡Tu órden se realizó con éxito!</h3>
+                <p>Tu código de seguimiento es <span className="text-lime-600">{order.id}</span></p>
+                <div className="border-t border-lime-200 m-8">
+                <h4 className='font-medium'>Detalle de la compra</h4>
+                <p>Total: ${order.total}</p>
+                <p>Productos:</p>
+                {order.items.map(item => <p key={item.id} className='text-lime-600'>{item.name}</p>)}
+                </div>
             </div>
 
         )
