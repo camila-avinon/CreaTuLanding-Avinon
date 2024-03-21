@@ -17,7 +17,7 @@ const Cart = () => {
             showConfirmButton: true,
             confirmButtonColor: "#DC2626",
             confirmButtonText: "Vaciar",
-            cancelButtonText: "Atrás"
+            cancelButtonText: "Atrás"console.log
         }). then( res => {
         if(res.isConfirmed) {
             clearCart()
